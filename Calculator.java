@@ -2,8 +2,8 @@
 /*
  * This program get 2 integers from the input and an operation symbol
  * Print the calculation
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Nir Krief)
+ * @version (v1 , 28.01.2025)
  */
 import java.util.Scanner;
 public class Calculator
