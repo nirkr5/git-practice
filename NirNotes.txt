@@ -1,3 +1,5 @@
 Hi im learning git.
 
 adding some more text for assigment. :)
+
+Added a ci yml file to my workflow and now im  testing to push main with the ci workflow
