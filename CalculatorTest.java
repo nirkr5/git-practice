@@ -5,13 +5,31 @@ public class CalculatorTest {
 
     @Test
     public void testAddition() {
-        Calculator calc = new Calculator();
-        assertEquals(5, calc.add(2, 3));
+        assertEquals(5, Calculator.calculate(2, 3, '+'));
     }
 
     @Test
     public void testSubtraction() {
-        Calculator calc = new Calculator();
-        assertEquals(2, calc.subtract(5, 3));
+        assertEquals(2, Calculator.calculate(5, 3, '-'));
+    }
+
+    @Test
+    public void testMultiplication() {
+        assertEquals(15, Calculator.calculate(3, 5, '*'));
+    }
+
+    @Test
+    public void testDivision() {
+        assertEquals(2, Calculator.calculate(6, 3, '/'));
+    }
+
+    @Test
+    public void testDivisionByZero() {
+        assertEquals(Double.NaN, Calculator.calculate(2, 0, '/'));
+    }
+
+    @Test
+    public void testInvalidOperation() {
+        assertEquals(0, Calculator.calculate(2, 3, '%')); // Invalid operation
     }
 }

@@ -45,7 +45,7 @@ public class Calculator {
     public static void main(String[] args) {
         // Get inputs
         int num1 = getInput("Please enter the first number:");
-        char operation = getInput("Please enter +, -, *, or /:").toString().charAt(0);
+        char operation = getInput("Please enter +, -, *, or /:"); 
         int num2 = getInput("Please enter the second number:");
 
         // Perform the calculation
