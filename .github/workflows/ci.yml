@@ -20,9 +20,10 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin' # Specify the Java distribution (e.g., temurin)
+          distribution: 'temurin'
 
       - name: Compile Java code
-        run: javac Calculator.java
+        run: javac Calculator.java CalculatorTest.java
 
-        
+      - name: Run JUnit Tests
+        run: java -jar junit-platform-console-standalone-1.9.3.jar -cp . --select-class CalculatorTest
