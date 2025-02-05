@@ -6,41 +6,52 @@
  * @version (v1 , 28.01.2025)
  */
 import java.util.Scanner;
-public class Calculator
-{
-    public static void main(String[] args) {
+
+public class Calculator {
+
+    // Method to get input
+    public static int getInput(String prompt) {
         Scanner scan = new Scanner(System.in);
-        int num1,num2;
+        System.out.println(prompt);
+        return scan.nextInt();
+    }
+
+    // Method to perform calculation
+    public static double calculate(int num1, int num2, char operation) {
         double result = 0;
-        char operation;
-        // Getting the inputs
-        System.out.println("Please enter the first num");
-        num1 = scan.nextInt();
-        System.out.println("Please enter + or -or * or '/'");
-        operation = scan.next().charAt(0);
-        System.out.println("Please enter the second num");
-        num2 = scan.nextInt();
-        // Print the exercise
-        System.out.println("" + num1 + operation + num2 + "=");
-        //switch(operation){}
-        
-        
-        if(operation == '+')
-            result = num1 + num2;
-                else if(operation == '-')
-               result = num1 - num2;
-               else if(operation == '*')       
-                  result = num1 * num2; 
-                    else if(operation == '/')
-                        result = (double)num1 / num2; 
-          
-        else
-            System.out.println("The operation is invalid");
-        System.out.println(result);
-     
-        
-        
-        
-        
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = (double) num1 / num2;
+                } else {
+                    System.out.println("Error: Division by zero.");
+                }
+                break;
+            default:
+                System.out.println("The operation is invalid.");
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        // Get inputs
+        int num1 = getInput("Please enter the first number:");
+        char operation = getInput("Please enter +, -, *, or /:").toString().charAt(0);
+        int num2 = getInput("Please enter the second number:");
+
+        // Perform the calculation
+        double result = calculate(num1, num2, operation);
+
+        // Print the result
+        System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
     }
 }
